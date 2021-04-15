@@ -34,6 +34,27 @@ services:
     depends_on:
       - elasticsearch
 
+  frontend:
+    container_name: client
+    build:
+        context: ./client
+        dockerfile: Dockerfile
+    image: keithcruz/client
+    ports:
+        - "3000:3000"
+    volumes:
+        - ./client:/usr/src/app
+  backend:
+      container_name: server
+      build:
+          context: ./server
+          dockerfile: Dockerfile
+      image: keithcruz/server
+      ports:
+          - "5000:5000"
+      volumes:
+          - ./server:/usr/src/app
+
 volumes:
   elasticsearch-data:
     driver: local
