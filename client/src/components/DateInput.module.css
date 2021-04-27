@@ -1,0 +1,14 @@
+.dateInput {
+  height: 15vh;
+  /* color: #0000; */
+}
+
+.inputArea {
+  height: 100%
+}
+
+.inputArea button {
+  height: 20%;
+  width: 20%;
+  border-radius: 5px;
+}

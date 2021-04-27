@@ -2,13 +2,15 @@ const express = require("express");
 const fetch = require("node-fetch");
 const app = express();
 
-app.get("/api", async (req, res) => {
+app.use(express.json());
+
+app.post("/api", async (req, res) => {
   const body = {
     query: {
       range: {
         timestamp: {
-          gte: "2021-04-07",
-          lte: "2021-04-07",
+          gte: `${req.body.start}`,
+          lte: `${req.body.end}`,
         },
       },
     },
@@ -25,6 +27,7 @@ app.get("/api", async (req, res) => {
     );
 
     if (!response.ok) {
+      console.log(JSON.stringify(response, null, 2));
       res.send(response);
     }
 
