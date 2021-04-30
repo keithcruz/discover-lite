@@ -38,16 +38,11 @@ function Chart({ data }) {
   const charData = buildData(freq);
   return (
     <ResponsiveContainer width="80%" height={275}>
-      <BarChart
-        width={1000}
-        height={250}
-        data={charData}
-        className={styles.chartFont}
-      >
+      <BarChart data={charData} className={styles.chartFont}>
         <XAxis dataKey="time" />
         <YAxis dataKey="hits" />
         <Tooltip />
-        <Bar dataKey="hits" fill="#8884d8" />
+        <Bar dataKey="hits" fill="#48D1CC" />
       </BarChart>
     </ResponsiveContainer>
   );
