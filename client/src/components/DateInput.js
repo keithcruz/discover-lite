@@ -7,22 +7,18 @@ function dateFormat(date) {
   return date.toISOString().split("T")[0];
 }
 
-function DateInput() {
-  const [range, setRange] = useState([new Date(), new Date()]);
-  // const [isFetching, setFetching] = useState(false);
-
+function DateInput({ updateData, updateRange, range }) {
   useEffect(() => {
     const [start, end] = range.map(dateFormat);
-    console.log(start, end);
-    fetchItems(start, end).then((res) => console.log(res));
-  }, [range]);
+
+    fetchItems(start, end).then((res) => {
+      updateData(res);
+    });
+  }, [range, updateRange, updateData]);
 
   return (
     <div className={styles.dateInput}>
-      <DateRangePicker onChange={setRange} value={range} />
-      <div className={styles.inputArea}>
-        <button>Submit</button>
-      </div>
+      <DateRangePicker onChange={updateRange} value={range} />
     </div>
   );
 }

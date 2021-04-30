@@ -1,0 +1,41 @@
+  .dataTable {
+    border-spacing: 0;
+    width: 80%;
+    font-size: 16px;
+    padding-top: 10px;
+ }
+
+  .dataTable th {
+    border: none
+ }
+
+  .dataTable td {
+    border-bottom: 1px solid black;
+ }
+
+
+  .dataTable th, .dataTable td {
+    text-align: left;
+    padding: 1.0em;
+ }
+
+  @media (max-width: 580px) {
+    .dataTable tr, .dataTable td, .dataTable tbody {
+      display: block;
+   }
+    .dataTable thead {
+      display: none;
+   }
+    .dataTable td {
+      text-align: left;
+      border-style: none;
+   }
+    .dataTable td:before {
+      content: attr(data-title);
+      color: #d9d9d9;
+      text-transform: uppercase;
+      font-size: 1.2em;
+      padding-right: 10px;
+      display: block;
+   }
+ }

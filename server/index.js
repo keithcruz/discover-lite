@@ -6,6 +6,7 @@ app.use(express.json());
 
 app.post("/api", async (req, res) => {
   const body = {
+    sort: [{ timestamp: { order: "asc" } }],
     query: {
       range: {
         timestamp: {
