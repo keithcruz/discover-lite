@@ -16,11 +16,11 @@ function ElasticTable({ data }) {
       <tbody>
         {data.map((item) => (
           <tr key={item._id}>
-            <td>{item._source.timestamp}</td>
-            <td>{item._source.clientip}</td>
-            <td>{item._source.geo.srcdest}</td>
-            <td>{item._source.request}</td>
-            <td>{item._source.response}</td>
+            <td data-title="Time">{item._source.timestamp}</td>
+            <td data-title="clientip">{item._source.clientip}</td>
+            <td data-title="geo.srcdest">{item._source.geo.srcdest}</td>
+            <td data-title="request">{item._source.request}</td>
+            <td data-title="response">{item._source.response}</td>
           </tr>
         ))}
       </tbody>

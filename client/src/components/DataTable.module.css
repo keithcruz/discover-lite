@@ -19,23 +19,25 @@
     padding: 1.0em;
  }
 
-  @media (max-width: 580px) {
-    .dataTable tr, .dataTable td, .dataTable tbody {
-      display: block;
-   }
-    .dataTable thead {
-      display: none;
-   }
-    .dataTable td {
-      text-align: left;
-      border-style: none;
-   }
-    .dataTable td:before {
-      content: attr(data-title);
-      color: #d9d9d9;
-      text-transform: uppercase;
-      font-size: 1.2em;
-      padding-right: 10px;
-      display: block;
-   }
- }
+@media (max-width: 580px) {
+  .dataTable tr, .dataTable td, .dataTable tbody {
+    display: block;
+    border-bottom: 1px solid black
+  }
+
+  .dataTable thead {
+    display: none;
+  }
+  .dataTable td {
+    text-align: left;
+    border-style: none;
+  }
+  .dataTable td:before {
+    content: attr(data-title);
+    color: #d9d9d9;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding-right: 10px;
+    display: block;
+  }
+}
