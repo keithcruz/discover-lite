@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { fetchItems } from "../api";
 import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import styles from "./DateInput.module.css";
