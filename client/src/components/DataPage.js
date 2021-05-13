@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { DateInput } from "./DateInput";
 import { Chart } from "./Chart";
-import { ElasticTable } from "./DataTable";
+import { DataTable } from "./DataTable";
 import styles from "./DataPage.module.css";
 
 function DataPage() {
@@ -19,7 +19,7 @@ function DataPage() {
         range={range}
       />
       <Chart data={data.hits ? data.hits.hits : []} />
-      <ElasticTable data={data.hits ? data.hits.hits : []} />
+      <DataTable data={data.hits ? data.hits.hits : []} />
     </div>
   );
 }

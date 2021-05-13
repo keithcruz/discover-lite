@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./DataTable.module.css";
 
-function ElasticTable({ data }) {
+function DataTable({ data }) {
   return (
     <table className={styles.dataTable}>
       <thead>
@@ -28,4 +28,4 @@ function ElasticTable({ data }) {
   );
 }
 
-export { ElasticTable };
+export { DataTable };
